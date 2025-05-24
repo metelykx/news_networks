@@ -7,4 +7,6 @@
 
 import Foundation
 
-class 
+final class NerworkManager {
+    
+}
