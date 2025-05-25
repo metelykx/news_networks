@@ -12,6 +12,7 @@ final class NetworkManager {
     //MARK: - Proporties
     static let shared = NetworkManager()
     let URLNews = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=e197bdd544c94f95b028cf929b1588b8"
+    let decoder = JSONDecoder()
     //MARK: - Initializer
     private init() {}
     
@@ -23,7 +24,7 @@ final class NetworkManager {
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NetworkError.invalidResponse}
         
         do {
-            return try JSONDecoder().decode(News.self, from: data)
+            return try decoder.decode(News.self, from: data)
         }
         catch {
             throw NetworkError.InvalidData
