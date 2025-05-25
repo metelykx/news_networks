@@ -13,6 +13,7 @@ final class NetworkManager {
     static let shared = NetworkManager()
     let URLNews = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=e197bdd544c94f95b028cf929b1588b8"
     let decoder = JSONDecoder()
+    
     //MARK: - Initializer
     private init() {
         decoder.dateDecodingStrategy = .iso8601

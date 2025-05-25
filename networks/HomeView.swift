@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
+    
+    @State var news: [Article] = []
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,8 +19,17 @@ struct ContentView: View {
         }
         .padding()
     }
+    
+    func fetchNews() async {
+        do{
+            let articles = try await NetworkManager.shared.getNews()
+        }
+        catch{
+            
+        }
+    }
 }
 
 #Preview {
-    ContentView()
+    HomeView()
 }
