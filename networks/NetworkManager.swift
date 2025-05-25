@@ -14,7 +14,9 @@ final class NetworkManager {
     let URLNews = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=e197bdd544c94f95b028cf929b1588b8"
     let decoder = JSONDecoder()
     //MARK: - Initializer
-    private init() {}
+    private init() {
+        decoder.dateDecodingStrategy = .iso8601
+    }
     
     //MARK: - Methods
     func getNews() async throws -> News{
@@ -32,8 +34,3 @@ final class NetworkManager {
     }
 }
 
-enum NetworkError: String, Error {
-    case invalidURL = "Invalid URL"
-    case invalidResponse = "Invalid response"
-    case InvalidData = "Invalid Data"
-}
