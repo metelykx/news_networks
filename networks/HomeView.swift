@@ -17,7 +17,9 @@ struct HomeView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
         }
-        .padding()
+        .onAppear() {
+            
+        }
     }
     
     func fetchNews() async {
@@ -26,7 +28,9 @@ struct HomeView: View {
             news = articles.articles
         }
         catch{
-            
+            if let error = error as? NetworkError {
+                print(error)
+            }
         }
     }
 }
