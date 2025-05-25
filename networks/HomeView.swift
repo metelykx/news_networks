@@ -9,13 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     
+    //MARK: Properties
     @State var news: [Article] = []
+    
+    //MARK: -Body
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            ForEach(news, id: \.url) { article in
+                Text(article.title)
+            }
         }
         .onAppear() {
             Task {
