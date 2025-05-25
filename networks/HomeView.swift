@@ -23,6 +23,7 @@ struct HomeView: View {
     func fetchNews() async {
         do{
             let articles = try await NetworkManager.shared.getNews()
+            news = articles.articles
         }
         catch{
             
