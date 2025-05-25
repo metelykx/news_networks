@@ -9,5 +9,9 @@ import Foundation
 
 final class NetworkManager {
     
+    //MARK: - Proporties
     static let shared = NetworkManager()
+    
+    //MARK: - Initializer
+    private init() {}
 }
