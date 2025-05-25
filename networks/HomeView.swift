@@ -18,7 +18,9 @@ struct HomeView: View {
             Text("Hello, world!")
         }
         .onAppear() {
-            
+            Task {
+                await fetchNews()
+            }
         }
     }
     
