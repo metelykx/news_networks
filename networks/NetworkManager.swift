@@ -14,4 +14,9 @@ final class NetworkManager {
     
     //MARK: - Initializer
     private init() {}
+    
+    //MARK: - Methods
+    func getNews() {
+        
+    }
 }
